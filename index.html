@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Auto-refresh</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        iframe {
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h2>refresh</h2>
-    <div id="content">
-        <h1>Welcome to My Website</h1>
-
-    </div>
-
+    <h3>Refresh</h3>
+    <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/vJQMhj6WYZA?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    
     <script>
-        window.onload = function() {
-            setTimeout(function() {
-                document.getElementById('content').style.display = 'block';
-            }, 10000); // 10000 milliseconds = 10 seconds
-        }
+        setInterval(function() {
+            var iframe = document.getElementById('youtube-video');
+            iframe.src = iframe.src;
+        }, 10000);
     </script>
-    <script language="javascript">
-        setInterval(function(){
-           window.location.reload(1);
-        }, 30000);
-        </script>
 </body>
 </html>
